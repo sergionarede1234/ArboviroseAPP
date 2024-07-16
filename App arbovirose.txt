@@ -1,4 +1,4 @@
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -34,139 +34,27 @@ const ArbovirosesApp = () => {
 
   const quarteiroes = {
     Centro: {
-      1: 18,
-      2: 10,
-      3: 20,
-      4: 7,
-      5: 13,
-      6: 40,
-      7: 30,
-      8: 25,
-      9: 7,
-      10: 3,
-      11: 7,
-      12: 4,
-      13: 4,
-      14: 14,
-      15: 14,
-      16: 19,
-      17: 26,
-      18: 31,
-      19: 14,
-      20: 21,
-      21: 28,
-      22: 25,
-      23: 28,
-      24: 30,
-      25: 9,
-      26: 15,
-      27: 4,
-      28: 12,
-      29: 30,
-      30: 40,
-      31: 41,
-      32: 23,
-      33: 36,
-      34: 14,
-      35: 37,
-      36: 7,
-      37: 41,
-      38: 28,
-      39: 7,
-      40: 1,
-      41: 27,
-      42: 23,
-      43: 10,
-      44: 10,
-      45: 15,
-      46: 26,
-      47: 14,
-      48: 17,
-      49: 40,
-      50: 10,
-      51: 1,
-      52: 24,
-      53: 11,
-      54: 22,
-      55: 18,
-      56: 14,
-      57: 13,
-      58: 31,
-      59: 14,
-      60: 28,
-      61: 38,
-      62: 22,
-      63: 1,
-      64: 50,
-      65: 37,
-      66: 31,
-      67: 20,
-      68: 30,
-      69: 24,
-      70: 18,
-      71: 10,
-      72: 3,
-      73: 40,
-      74: 23,
-      75: 29,
-      76: 3,
-      77: 97,
-      78: 40,
-      79: 54,
+      1: 18, 2: 10, 3: 20, 4: 7, 5: 13, 6: 40, 7: 30, 8: 25, 9: 7, 10: 3,
+      11: 7, 12: 4, 13: 4, 14: 14, 15: 14, 16: 19, 17: 26, 18: 31, 19: 14,
+      20: 21, 21: 28, 22: 25, 23: 28, 24: 30, 25: 9, 26: 15, 27: 4, 28: 12,
+      29: 30, 30: 40, 31: 41, 32: 23, 33: 36, 34: 14, 35: 37, 36: 7, 37: 41,
+      38: 28, 39: 7, 40: 1, 41: 27, 42: 23, 43: 10, 44: 10, 45: 15, 46: 26,
+      47: 14, 48: 17, 49: 40, 50: 10, 51: 1, 52: 24, 53: 11, 54: 22, 55: 18,
+      56: 14, 57: 13, 58: 31, 59: 14, 60: 28, 61: 38, 62: 22, 63: 1, 64: 50,
+      65: 37, 66: 31, 67: 20, 68: 30, 69: 24, 70: 18, 71: 10, 72: 3, 73: 40,
+      74: 23, 75: 29, 76: 3, 77: 97, 78: 40, 79: 54,
     },
     'Frei Damião': {
-      1: 8,
-      2: 10,
-      3: 1,
-      4: 2,
-      5: 24,
-      6: 26,
-      7: 5,
-      8: 19,
-      9: 10,
-      10: 1,
-      11: 1,
-      12: 20,
-      13: 2,
-      14: 3,
-      15: 48,
-      16: 54,
-      17: 55,
-      18: 51,
-      19: 53,
-      20: 50,
-      21: 52,
-      22: 1,
-      23: 54,
-      24: 48,
-      25: 1,
-      26: 1,
-      27: 6,
-      28: 5,
-      29: 43,
+      1: 8, 2: 10, 3: 1, 4: 2, 5: 24, 6: 26, 7: 5, 8: 19, 9: 10, 10: 1,
+      11: 1, 12: 20, 13: 2, 14: 3, 15: 48, 16: 54, 17: 55, 18: 51, 19: 53,
+      20: 50, 21: 52, 22: 1, 23: 54, 24: 48, 25: 1, 26: 1, 27: 6, 28: 5, 29: 43,
     },
     'José Fernandes': {
-      1: 1,
-      2: 21,
-      3: 12,
-      4: 13,
-      5: 22,
-      6: 33,
-      7: 36,
-      8: 5,
-      9: 27,
-      10: 3,
-      11: 4,
-      12: 16,
-      13: 3,
-      14: 1,
-      15: 1,
+      1: 1, 2: 21, 3: 12, 4: 13, 5: 22, 6: 33, 7: 36, 8: 5, 9: 27, 10: 3,
+      11: 4, 12: 16, 13: 3, 14: 1, 15: 1,
     },
     'Paulo Figueiredo': {
-      1: 10,
-      2: 10,
-      3: 13,
-      4: 8,
+      1: 10, 2: 10, 3: 13, 4: 8,
     },
   };
 
@@ -209,7 +97,13 @@ const ArbovirosesApp = () => {
 
   const handleImovelSelect = (imovel) => {
     setSelectedImovel(imovel);
-    setScreen('status');
+    const imovelKey = `${selectedBairro}-${selectedQuarteirao}-${imovel}`;
+    const status = imovelStatus[imovelKey];
+    if (status === 'Fechado') {
+      setScreen('recuperado');
+    } else {
+      setScreen('status');
+    }
   };
 
   const handleStatusSelect = async (status) => {
@@ -223,7 +117,7 @@ const ArbovirosesApp = () => {
 
     await AsyncStorage.setItem('imovelStatus', JSON.stringify(newImovelStatus));
 
-    if (status === 'Fechado') {
+    if (status === 'Recuperado') {
       setShowFinalizar(true);
     }
   };
@@ -253,10 +147,7 @@ const ArbovirosesApp = () => {
     };
     const updatedDailyVisits = [...dailyVisits, newVisit];
     setDailyVisits(updatedDailyVisits);
-    await AsyncStorage.setItem(
-      'dailyVisits',
-      JSON.stringify(updatedDailyVisits)
-    );
+    await AsyncStorage.setItem('dailyVisits', JSON.stringify(updatedDailyVisits));
 
     setScreen('bairros');
     setSelectedBairro('');
@@ -300,6 +191,8 @@ const ArbovirosesApp = () => {
           summary.fechados++;
         } else if (visit.status === 'Aberto') {
           summary.abertos++;
+        } else if (visit.status === 'Recuperado') {
+          summary.recuperados++;
         }
         if (visit.imovelTratado) {
           summary.tratados++;
@@ -307,7 +200,7 @@ const ArbovirosesApp = () => {
         }
         return summary;
       },
-      { total: 0, fechados: 0, abertos: 0, tratados: 0, larvicida: 0 }
+      { total: 0, fechados: 0, abertos: 0, recuperados: 0, tratados: 0, larvicida: 0 }
     );
 
     return (
@@ -323,6 +216,10 @@ const ArbovirosesApp = () => {
             <Text style={styles.tableCell}>{visitSummary.fechados}</Text>
           </View>
           <View style={styles.tableRow}>
+            <Text style={styles.tableCell}>Imóveis Recuperados</Text>
+            <Text style={styles.tableCell}>{visitSummary.recuperados}</Text>
+          </View>
+          <View style={styles.tableRow}>
             <Text style={styles.tableCell}>Imóveis Tratados</Text>
             <Text style={styles.tableCell}>{visitSummary.tratados}</Text>
           </View>
@@ -331,19 +228,13 @@ const ArbovirosesApp = () => {
             <Text style={styles.tableCell}>{visitSummary.larvicida}</Text>
           </View>
         </View>
-        <TouchableOpacity
-          onPress={handleClearSummary}
-          style={styles.clearButton}>
+        <TouchableOpacity onPress={handleClearSummary} style={styles.clearButton}>
           <Text style={styles.buttonText}>Resumo das Visitas do Dia</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={handleClearAllData}
-          style={styles.finalizarButton}>
+        <TouchableOpacity onPress={handleClearAllData} style={styles.finalizarButton}>
           <Text style={styles.buttonText}>Finalizar Ciclo</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => setScreen('bairros')}
-          style={styles.backButton}>
+        <TouchableOpacity onPress={() => setScreen('bairros')} style={styles.backButton}>
           <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -358,14 +249,16 @@ const ArbovirosesApp = () => {
           <TouchableOpacity
             key={bairro}
             onPress={() => handleBairroSelect(bairro)}
-            style={styles.button}>
+            style={styles.button}
+          >
             <Text style={styles.buttonText}>{bairro}</Text>
           </TouchableOpacity>
         ))}
       </View>
       <TouchableOpacity
         onPress={handleShowDailyVisits}
-        style={[styles.dailyVisitsButton, { alignItems: 'center' }]}>
+        style={[styles.dailyVisitsButton, { alignItems: 'center' }]}
+      >
         <Icon name="calendar" size={30} color="#3236a8" />
         <Text style={styles.buttonText}>Visitas do Dia</Text>
       </TouchableOpacity>
@@ -374,9 +267,7 @@ const ArbovirosesApp = () => {
 
   const QuarteroesScreen = () => (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>
-        Selecione o Quarteirão - {selectedBairro}
-      </Text>
+      <Text style={styles.title}>Selecione o Quarteirão - {selectedBairro}</Text>
       <View style={styles.buttonGrid}>
         {[...Array(bairros[selectedBairro])].map((_, i) => (
           <TouchableOpacity
@@ -388,14 +279,13 @@ const ArbovirosesApp = () => {
                 key.startsWith(`${selectedBairro}-${i + 1}`)
               ).length === quarteiroes[selectedBairro][i + 1] &&
                 styles.selectedGreenButton,
-            ]}>
+            ]}
+          >
             <Text style={styles.buttonText}>{i + 1}</Text>
           </TouchableOpacity>
         ))}
       </View>
-      <TouchableOpacity
-        onPress={() => setScreen('bairros')}
-        style={styles.backButton}>
+      <TouchableOpacity onPress={() => setScreen('bairros')} style={styles.backButton}>
         <Text style={styles.buttonText}>Voltar</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -408,32 +298,27 @@ const ArbovirosesApp = () => {
         Bairro: {selectedBairro}, Quarteirão: {selectedQuarteirao}
       </Text>
       <View style={styles.buttonGrid}>
-        {[...Array(quarteiroes[selectedBairro][selectedQuarteirao])].map(
-          (_, i) => {
-            const imovelKey = `${selectedBairro}-${selectedQuarteirao}-${
-              i + 1
-            }`;
-            const status = imovelStatus[imovelKey];
-            return (
-              <TouchableOpacity
-                key={i + 1}
-                onPress={() => handleImovelSelect(i + 1)}
-                style={[
-                  styles.smallButton,
-                  status === 'Aberto' && styles.greenButton,
-                  status === 'Fechado' && styles.redButton,
-                ]}
-                disabled={status === 'Aberto'}>
-                <Icon name="home" size={24} color="#fff" />
-                <Text style={styles.buttonText}>{i + 1}</Text>
-              </TouchableOpacity>
-            );
-          }
-        )}
+        {[...Array(quarteiroes[selectedBairro][selectedQuarteirao])].map((_, i) => {
+          const imovelKey = `${selectedBairro}-${selectedQuarteirao}-${i + 1}`;
+          const status = imovelStatus[imovelKey];
+          return (
+            <TouchableOpacity
+              key={i + 1}
+              onPress={() => handleImovelSelect(i + 1)}
+              style={[
+                styles.smallButton,
+                status === 'Aberto' && styles.greenButton,
+                status === 'Fechado' && styles.redButton,
+                status === 'Recuperado' && styles.greenButton,
+              ]}
+            >
+              <Icon name="home" size={24} color="#fff" />
+              <Text style={styles.buttonText}>{i + 1}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
-      <TouchableOpacity
-        onPress={() => setScreen('quarteiroes')}
-        style={styles.backButton}>
+      <TouchableOpacity onPress={() => setScreen('quarteiroes')} style={styles.backButton}>
         <Text style={styles.buttonText}>Voltar</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -443,28 +328,25 @@ const ArbovirosesApp = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Informações do Imóvel</Text>
       <Text style={styles.subtitle}>
-        Bairro: {selectedBairro}, Quarteirão: {selectedQuarteirao}, Imóvel:{' '}
-        {selectedImovel}
+        Bairro: {selectedBairro}, Quarteirão: {selectedQuarteirao}, Imóvel: {selectedImovel}
       </Text>
       <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={() => handleStatusSelect('Aberto')}
           style={[
             styles.button,
-            visitData.status === 'Aberto'
-              ? styles.selectedGreenButton
-              : styles.blueButton,
-          ]}>
+            visitData.status === 'Aberto' ? styles.selectedGreenButton : styles.blueButton,
+          ]}
+        >
           <Text style={styles.buttonText}>Aberto</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => handleStatusSelect('Fechado')}
           style={[
             styles.button,
-            visitData.status === 'Fechado'
-              ? styles.selectedRedButton
-              : styles.blueButton,
-          ]}>
+            visitData.status === 'Fechado' ? styles.selectedRedButton : styles.blueButton,
+          ]}
+        >
           <Text style={styles.buttonText}>Fechado</Text>
         </TouchableOpacity>
       </View>
@@ -472,45 +354,34 @@ const ArbovirosesApp = () => {
       <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={() => handleTipoImovelSelect('Residencia')}
-          style={[
-            styles.button,
-            tipoImovel === 'Residencia' && styles.selectedGreenButton,
-          ]}>
+          style={[styles.button, tipoImovel === 'Residencia' && styles.selectedGreenButton]}
+        >
           <Text style={styles.buttonText}>Residencia</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => handleTipoImovelSelect('Comercio')}
-          style={[
-            styles.button,
-            tipoImovel === 'Comercio' && styles.selectedGreenButton,
-          ]}>
+          style={[styles.button, tipoImovel === 'Comercio' && styles.selectedGreenButton]}
+        >
           <Text style={styles.buttonText}>Comercio</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.buttonRow}>
         <TouchableOpacity
           onPress={() => handleTipoImovelSelect('Tb')}
-          style={[
-            styles.button,
-            tipoImovel === 'Tb' && styles.selectedGreenButton,
-          ]}>
+          style={[styles.button, tipoImovel === 'Tb' && styles.selectedGreenButton]}
+        >
           <Text style={styles.buttonText}>Tb</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => handleTipoImovelSelect('Outros')}
-          style={[
-            styles.button,
-            tipoImovel === 'Outros' && styles.selectedGreenButton,
-          ]}>
+          style={[styles.button, tipoImovel === 'Outros' && styles.selectedGreenButton]}
+        >
           <Text style={styles.buttonText}>Outros</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.switchContainer}>
         <Text>Imóvel Tratado: </Text>
-        <Switch
-          value={imovelTratado}
-          onValueChange={handleImovelTratadoToggle}
-        />
+        <Switch value={imovelTratado} onValueChange={handleImovelTratadoToggle} />
       </View>
       {imovelTratado && (
         <TextInput
@@ -522,15 +393,83 @@ const ArbovirosesApp = () => {
         />
       )}
       {showFinalizar && (
-        <TouchableOpacity
-          onPress={handleFinalizarVisita}
-          style={styles.finalizarButton}>
+        <TouchableOpacity onPress={handleFinalizarVisita} style={styles.finalizarButton}>
           <Text style={styles.buttonText}>Finalizar Visita</Text>
         </TouchableOpacity>
       )}
+      <TouchableOpacity onPress={() => setScreen('imoveis')} style={styles.backButton}>
+        <Text style={styles.buttonText}>Voltar</Text>
+      </TouchableOpacity>
+    </ScrollView>
+  );
+
+  const RecuperadoScreen = () => (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Informações do Imóvel</Text>
+      <Text style={styles.subtitle}>
+        Bairro: {selectedBairro}, Quarteirão: {selectedQuarteirao}, Imóvel: {selectedImovel}
+      </Text>
       <TouchableOpacity
-        onPress={() => setScreen('imoveis')}
-        style={styles.backButton}>
+        onPress={() => handleStatusSelect('Recuperado')}
+        style={[
+          styles.button,
+          visitData.status === 'Recuperado' ? styles.selectedGreenButton : styles.blueButton,
+        ]}
+      >
+        <Text style={styles.buttonText}>Recuperado</Text>
+      </TouchableOpacity>
+      {visitData.status === 'Recuperado' && (
+        <>
+          <Text style={styles.subtitle}>Tipo de Imóvel</Text>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity
+              onPress={() => handleTipoImovelSelect('Residencia')}
+              style={[styles.button, tipoImovel === 'Residencia' && styles.selectedGreenButton]}
+            >
+              <Text style={styles.buttonText}>Residencia</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => handleTipoImovelSelect('Comercio')}
+              style={[styles.button, tipoImovel === 'Comercio' && styles.selectedGreenButton]}
+            >
+              <Text style={styles.buttonText}>Comercio</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity
+              onPress={() => handleTipoImovelSelect('Tb')}
+              style={[styles.button, tipoImovel === 'Tb' && styles.selectedGreenButton]}
+            >
+              <Text style={styles.buttonText}>Tb</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => handleTipoImovelSelect('Outros')}
+              style={[styles.button, tipoImovel === 'Outros' && styles.selectedGreenButton]}
+            >
+              <Text style={styles.buttonText}>Outros</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.switchContainer}>
+            <Text>Imóvel Tratado: </Text>
+            <Switch value={imovelTratado} onValueChange={handleImovelTratadoToggle} />
+          </View>
+          {imovelTratado && (
+            <TextInput
+              style={styles.input}
+              placeholder="Quantidade de Larvicida (g)"
+              keyboardType="numeric"
+              value={quantidadeLarvicida}
+              onChangeText={handleQuantidadeLarvicida}
+            />
+          )}
+          {showFinalizar && (
+            <TouchableOpacity onPress={handleFinalizarVisita} style={styles.finalizarButton}>
+              <Text style={styles.buttonText}>Finalizar Visita</Text>
+            </TouchableOpacity>
+          )}
+        </>
+      )}
+      <TouchableOpacity onPress={() => setScreen('imoveis')} style={styles.backButton}>
         <Text style={styles.buttonText}>Voltar</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -542,6 +481,7 @@ const ArbovirosesApp = () => {
       {screen === 'quarteiroes' && <QuarteroesScreen />}
       {screen === 'imoveis' && <ImoveisScreen />}
       {screen === 'status' && <StatusScreen />}
+      {screen === 'recuperado' && <RecuperadoScreen />}
       {screen === 'dailyVisits' && <DailyVisitsScreen />}
     </View>
   );
